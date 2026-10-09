@@ -1,0 +1,21 @@
+{
+  "name": "aitm-keiei-company",
+  "owner": {
+    "name": "AITM (SHO-SAN)",
+    "url": "https://github.com/yujirotn"
+  },
+  "metadata": {
+    "description": "AI経営参謀1day 向け。積算・見積を5役で進め、案件フォルダに記憶を残す『育つ仕組み』。"
+  },
+  "plugins": [
+    {
+      "name": "keiei-company",
+      "source": "./",
+      "description": "積算・見積を5役（統括・積算・見積作成・チェック・顧客対応）で進め、案件ごとの経過ログ・やりとりを残す。/company-setup /new-case /log を同梱。",
+      "version": "0.1.0",
+      "author": { "name": "AITM (SHO-SAN)" },
+      "category": "productivity",
+      "keywords": ["estimate", "construction", "agents", "project-memory"]
+    }
+  ]
+}
