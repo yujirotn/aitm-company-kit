@@ -12,7 +12,7 @@
       "name": "keiei-company",
       "source": "./",
       "description": "初回・再開・再設定に対応し、顧客別の複数案件、議事録、図面改訂、見積版、経過を管理する。",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "author": {
         "name": "AITM (SHO-SAN)"
       },

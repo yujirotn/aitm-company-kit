@@ -1,7 +1,7 @@
 {
   "name": "keiei-company",
   "description": "会社ごとに役割と運用を聞き取り、顧客別の複数案件に議事録・図面改訂・見積版・履歴を残すプラグイン。積算向け5役は変更可能な初期案。",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "AITM (SHO-SAN)"
   }

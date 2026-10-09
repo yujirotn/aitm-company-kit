@@ -1,5 +1,4 @@
 import json
-import re
 import unittest
 from pathlib import Path
 
@@ -61,6 +60,29 @@ class RepositoryContractTests(unittest.TestCase):
         self.assertNotIn('原価に利益率を掛けて売価', quote)
         for term in ('税', '丸め', '仮単価', '確定単価'):
             self.assertIn(term, quote)
+
+    def test_local_role_handoff_is_documented(self):
+        setup = (ROOT / 'commands/company-setup.md').read_text()
+        agents = (ROOT / 'templates/AGENTS.md').read_text()
+        role = (ROOT / 'templates/役割/_役割テンプレート.md').read_text()
+        guide = (ROOT / 'docs/導入と運用.md').read_text()
+        for field in ('役割ID', '担当する仕事と境界', '入力', '成果物', '止めて人に確認する条件', '関連する手順書'):
+            self.assertIn(field, role)
+        for reference in ('役割/<役割ID>.md', '手順書/', '.claude/agents/<役割ID>.md'):
+            self.assertIn(reference, setup)
+            self.assertIn(reference, guide)
+        self.assertIn('役割/<役割ID>.md', agents)
+        self.assertIn('手順書/', agents)
+        self.assertIn('../手順書/<手順名>.md', role)
+
+    def test_visual_proposal_precedes_file_changes(self):
+        setup = (ROOT / 'commands/company-setup.md').read_text()
+        proposal = (ROOT / 'docs/構成提案テンプレート.md').read_text()
+        self.assertLess(setup.index('テキストツリー図'), setup.index('5. 作業先と図・対応表への明示合意後'))
+        for item in ('打合せメモ', '受領図面', '改訂図面', '業者見積',
+                     '既存管理との対応', '再提示', 'この管理方法でいいですか？'):
+            self.assertIn(item, proposal)
+        self.assertIn('承認前はテンプレートのコピーを含め、実ファイルの作成・変更をしない', setup)
 
     def test_no_real_customer_files(self):
         self.assertFalse((ROOT / '顧客').exists())
