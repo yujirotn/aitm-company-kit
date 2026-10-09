@@ -1,0 +1,9 @@
+# This public plugin repository must contain templates only, never local customer data.
+/顧客/
+/案件/
+/会社設定.md
+/導入状態.md
+/単価マスター/
+
+__pycache__/
+*.pyc
