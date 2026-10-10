@@ -5,17 +5,24 @@
     "url": "https://github.com/yujirotn"
   },
   "metadata": {
-    "description": "AI経営参謀1day 向け。積算・見積を5役で進め、案件フォルダに記憶を残す『育つ仕組み』。"
+    "description": "会社ごとの聞き取りから始める案件記録。積算向け5役は変更可能な初期案。"
   },
   "plugins": [
     {
       "name": "keiei-company",
       "source": "./",
-      "description": "積算・見積を5役（統括・積算・見積作成・チェック・顧客対応）で進め、案件ごとの経過ログ・やりとりを残す。/company-setup /new-case /log を同梱。",
-      "version": "0.1.0",
-      "author": { "name": "AITM (SHO-SAN)" },
+      "description": "初回・再開・再設定に対応し、顧客別の複数案件、議事録、図面改訂、見積版、経過を管理する。",
+      "version": "0.2.1",
+      "author": {
+        "name": "AITM (SHO-SAN)"
+      },
       "category": "productivity",
-      "keywords": ["estimate", "construction", "agents", "project-memory"]
+      "keywords": [
+        "estimate",
+        "construction",
+        "agents",
+        "project-memory"
+      ]
     }
   ]
 }
